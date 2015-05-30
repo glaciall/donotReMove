@@ -15,7 +15,7 @@ arg="";
 for((i=1;i<=$#;i++));do
 	ag=$(eval echo \${${i}});
 
-    # 如果目标文件不是/开始，那就拼上当前目录，防止rm -fr ../../../../../
+    	# 如果目标文件不是/开始，那就拼上当前目录，防止rm -fr ../../../../../
 	if [ "`echo $ag|cut -c 1`"x != "/x" ]; then
 		if [ ${ag:0:1} != "-" ]; then
 			ag="`pwd`/$ag";
@@ -25,8 +25,11 @@ for((i=1;i<=$#;i++));do
 	arg="$arg $ag";
 	apath=`echo $ag|awk -F "/" '{ print $2 }'`;
 
-    # 禁止删除bin、usr、sys、dev等等目录下的文件
-	if [ "$apath"x = "bin"x ]; then
+    	# 禁止删除bin、usr、sys、dev等等目录下的文件
+    	
+    	if [ "$apath"x = ""x ]; then
+    		fn_quit $ag;
+	elif [ "$apath"x = "bin"x ]; then
 		fn_quit $ag;
 	elif [ "$apath"x = "usr"x ]; then
 		fn_quit $ag;
