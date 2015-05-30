@@ -14,3 +14,6 @@ ln -s /opt/rm.sh /bin/rm
 rm -fr /
 
 大胆的去犯迷糊吧。。。
+
+# Attention
+因为make install时，会执行大量的rm删除命令，所以会导致install时疯狂提示输入验证码，嘿嘿。。。
