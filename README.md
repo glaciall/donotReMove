@@ -1,5 +1,6 @@
 # donotReMove
 专治各种手贱rm -fr /
+看了硅谷S2E8，就知道这么做的重要性了。。。
 
 # Install
 下载rm.sh到任意目录下，比如/opt/rm.sh，以root身份执行
